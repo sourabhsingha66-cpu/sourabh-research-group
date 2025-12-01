@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sourabh Singha — Research Group</title>
+  <meta name="description" content="Research group of Sourabh Singha — hydrogen storage, atomistic simulations, Pd/PdH, MD, KMC, and ML models for diffusion barriers." />
+  <style>
+    :root{--accent:#0b74de;--bg:#0f1720;--card:#0b1220;--muted:#9aa6b2}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:linear-gradient(180deg,#071020 0%, #071628 60%);color:#e6eef6;line-height:1.5}
+    .container{max-width:1100px;margin:32px auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6ad1ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042034}
+    h1{margin:0;font-size:clamp(20px,3vw,32px)}
+    .subtitle{color:var(--muted);margin-top:6px}
+    nav{margin-left:auto;display:flex;gap:12px}
+    a.button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none;font-size:14px}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    h2{margin-top:0}
+    ul{padding-left:18px}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;margin:6px 6px 0 0}
+    .tools{display:flex;flex-wrap:wrap}
+    .pub{margin-bottom:12px;padding-bottom:10px;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+    aside .card{position:sticky;top:24px}
+    .contact a{display:inline-block;margin-right:10px;text-decoration:none;color:var(--accent)}
+    .project-list{display:grid;gap:10px}
+    .project{padding:10px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    footer{text-align:center;color:var(--muted);margin:36px 0}
+
+    /* responsive */
+    @media (max-width:900px){main{grid-template-columns:1fr}aside .card{position:relative;top:auto}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">SS</div>
+      <div>
+        <h1>Sourabh Singha</h1>
+        <div class="subtitle">PhD student • Atomistic simulations • Hydrogen storage • Pd/PdH • MD & KMC & ML</div>
+        <div style="margin-top:8px;color:var(--muted);font-size:13px">Working with <strong>Prof. Abhijit Chatterjee</strong> (PhD guide) and co-guide <strong>Mr. Anaanji Rajiv Kumar</strong> (HPCL).</div>
+      </div>
+      <nav>
+        <a class="button" href="#research">Research</a>
+        <a class="button" href="#projects">Projects</a>
+        <a class="button" href="#publications">Publications</a>
+        <a class="button" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="card">
+          <h2 id="research">About the group</h2>
+          <p>We investigate chemo-mechanical and atomistic processes in metal hydrides and related materials with a focus on hydrogen storage — combining molecular dynamics (MD), kinetic Monte Carlo (KMC), first-principles-informed interatomic potentials (EAM), and machine learning to build fast predictive models of diffusion barriers and phase transformation behavior.</p>
+
+          <h3 style="margin-top:18px">Core competencies</h3>
+          <div class="tools">
+            <span class="tag">Molecular Dynamics (GROMACS, custom LAMMPS workflows)</span>
+            <span class="tag">Kinetic Monte Carlo</span>
+            <span class="tag">Interatomic potentials (EAM)</span>
+            <span class="tag">DFT-informed inputs</span>
+            <span class="tag">Machine learning for diffusion barriers (GNNs, SchNet/DimeNet)</span>
+            <span class="tag">PCT diagrams & thermodynamics</span>
+          </div>
+
+          <h3 style="margin-top:18px">Research highlights</h3>
+          <ul>
+            <li>Layer-by-layer hydride formation in metal hydrides — atomistic models to capture α/β interface formation and strain-coupled diffusion barriers.</li>
+            <li>Pd ↔ PdH composition studies: (1-x)Pd + xPdH → PdH<sub>x</sub>, phase behaviour and kinetics at elevated temperatures (e.g. 500 K studies).</li>
+            <li>Large-scale dataset of diffusion barriers (~1 million entries) used to train ML surrogates that reduce prediction time from days to minutes.</li>
+            <li>PCT diagram construction using EAM potentials and vibrational density of states (VDOS) to compute thermodynamic properties.</li>
+          </ul>
+
+          <h3 style="margin-top:18px">Tools & files we produce</h3>
+          <ul>
+            <li>Unit cell generators (.xyz, .cif) for BCC/FCC/hcp systems.</li>
+            <li>Simulation input suites: GROMACS topologies, LAMMPS scripts, Fortran/Octave utilities for common-tangent and PCT processing.</li>
+            <li>Analysis code — VACF → VDOS pipelines, convergence checks, and plotting scripts.</li>
+          </ul>
+
+          <h3 style="margin-top:18px">How we work</h3>
+          <p>We combine computational modeling (MD, DFT data) and ML model-building. Our pipelines prioritize reproducibility: documented input files, unit-cell generators, provably converged VACF/VDOS workflows, and a modular ML training pipeline for GNNs and descriptor-based regressors.</p>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2 id="projects">Selected projects</h2>
+          <div class="project-list">
+            <div class="project">
+              <strong>Machine learning for diffusion barriers</strong>
+              <div class="subtitle">Predict diffusion barriers from local atomic environments using graph neural networks. Dataset: ~1,000,000 computed barriers.</div>
+            </div>
+            <div class="project">
+              <strong>Pd/PdH layer-by-layer hydride formation</strong>
+              <div class="subtitle">Atomistic MD + energetics to map composition-dependent phase transitions and compute PCT curves using EAM potentials.</div>
+            </div>
+            <div class="project">
+              <strong>Kinetic Monte Carlo for hydrogen storage kinetics</strong>
+              <div class="subtitle">KMC models and visualization slides for explaining macroscopic uptake from atomistic barriers.</div>
+            </div>
+            <div class="project">
+              <strong>VACF → VDOS thermodynamic pipeline</strong>
+              <div class="subtitle">VACF convergence tests, normalization, and VDOS per-atom / per-cell analysis for finite-temperature properties.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2 id="publications">Selected publications & preprints</h2>
+
+          <div class="pub">
+            <div><strong>Singha, Sourabh</strong>, and Abhijit Chatterjee — <em>A chemo‑mechanical model for ...</em> (manuscript / conference abstract)</div>
+            <div class="subtitle">Topics: α/β interface, strain effects, diffusion barrier mapping.</div>
+          </div>
+
+          <div class="pub">
+            <div><strong>Singha, Sourabh</strong> — PCT diagram & VDOS calculations for hydrogen storage materials (publication / conference).</div>
+            <div class="subtitle">Used EAM potentials and statistical methods for thermodynamic characterization.</div>
+          </div>
+
+          <p style="color:var(--muted);font-size:13px;margin-top:8px">For a full list of papers, add DOI/links or upload your CV and I will add them to this page.</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Contact</h3>
+          <p class="contact">Email: <a href="#">(add your email)</a><br>Location: India<br>Availability: PhD student / open to collaborations</p>
+
+          <h3 style="margin-top:12px">Quick links</h3>
+          <p><a href="#" class="button">Download CV</a> <a href="#" class="button">GitHub</a> <a href="#" class="button">LinkedIn</a></p>
+
+          <h3 style="margin-top:12px">Supervisors</h3>
+          <ul>
+            <li><strong>Prof. Abhijit Chatterjee</strong> — PhD guide</li>
+            <li><strong>Mr. Anaanji Rajiv Kumar</strong> — Co-guide (HPCL)</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Technologies</h3>
+          <div class="tools">
+            <span class="tag">GROMACS</span>
+            <span class="tag">LAMMPS</span>
+            <span class="tag">DFT inputs</span>
+            <span class="tag">Python / pandas / matplotlib</span>
+            <span class="tag">Fortran / Octave utilities</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Notes for collaborators</h3>
+          <p style="color:var(--muted)">If you join the group we follow: documented input files, version-controlled analysis scripts, Jupyter examples for VACF → VDOS, and reproducible ML training pipelines. Typical deliverables: input bundles (.xyz/.cif), scripts, and short presentation slides summarizing findings.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Built for <strong>Sourabh Singha</strong> — edit the HTML to add emails, DOIs and links. Template generated automatically.</small>
+    </footer>
+  </div>
+</body>
+</html>
