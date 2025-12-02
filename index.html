@@ -2,93 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sourabh Singha • Research Group</title>
-  <meta name="description" content="Sourabh Singha — PhD student at IIT Bombay. Combined profile & projects page with collaborator overview." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sourabh Singha • Combined Site (Single File)</title>
+  <meta name="description" content="Single-file site combining Home, Publications, Blog, Projects & Contact (includes Jimut replica content)." />
   <style>
     :root{
       --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7dd3fc; --white:#e6eef6;
-      --glass: rgba(255,255,255,0.03);
-      --container:1100px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --container:1100px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,#071024 0%, #071428 100%);color:var(--white);-webkit-font-smoothing:antialiased;}
-    .wrap{max-width:var(--container);margin:28px auto;padding:28px}
-
-    header{display:flex;align-items:center;gap:20px}
-    .brand{display:flex;gap:14px;align-items:center}
+    a { color: var(--accent); text-decoration: none; }
+    .wrap{max-width:var(--container);margin:22px auto;padding:20px}
+    header{display:flex;align-items:center;gap:18px}
     .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04203a}
-    h1{font-size:28px;margin:0}
+    h1{font-size:22px;margin:0}
     .subtitle{color:var(--muted);margin-top:6px}
-
-    nav{margin-left:auto}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-    nav a:hover{color:var(--accent)}
-
-    .grid{display:grid;grid-template-columns:360px 1fr;gap:22px;margin-top:26px}
-
-    /* left column */
-    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    .photo{width:100%;height:260px;background-image:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.15));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted)}
-    .meta{margin-top:12px}
-    .meta b{display:block}
-    .pill{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:var(--muted);font-size:13px}
-
-    /* right column */
-    .section{margin-bottom:18px}
+    nav{margin-left:auto;display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);font-weight:600;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+    .grid{display:grid;grid-template-columns:360px 1fr;gap:22px;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .photo{width:100%;height:220px;background-image:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.15));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted)}
+    .pill{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:var(--muted);font-size:13px}
+    .section{margin-bottom:14px}
     .section h2{margin:0 0 10px 0;font-size:18px}
     .lead{color:var(--muted);line-height:1.6}
-
     .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
     .proj{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:10px}
     .proj h3{margin:0 0 6px 0;font-size:15px}
     .proj p{margin:0;color:var(--muted);font-size:13px}
-
-    .pubs li{margin-bottom:8px}
+    .pubs li{margin-bottom:8px;color:var(--muted)}
     .contact{display:flex;gap:12px;flex-wrap:wrap}
     .btn{background:linear-gradient(90deg,var(--accent),#60a5fa);color:#04203a;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
-
-    footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media (max-width:880px){
-      .grid{grid-template-columns:1fr}
-      .photo{height:200px}
-      .logo{width:48px;height:48px}
-    }
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+    .hide{display:none}
+    .page-title{font-size:20px;margin:0 0 8px 0}
+    /* small screens */
+    @media (max-width:880px){ .grid{grid-template-columns:1fr} .logo{width:48px;height:48px} .photo{height:160px} nav{display:none} }
+    /* top bar small nav (for mobile) */
+    .mobile-nav{display:none;margin-top:12px;gap:8px}
+    @media (max-width:880px){ .mobile-nav{display:flex} .mobile-nav a{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;color:var(--muted)} }
+    /* simple table for publications on small screens */
+    .pub-card{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);margin-bottom:10px}
+    /* subtle anchor highlight when linking to fragments */
+    :target { outline: 6px solid rgba(125,211,252,0.08); border-radius:8px; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">
+      <div style="display:flex;gap:12px;align-items:center">
         <div class="logo">SS</div>
         <div>
-          <h1>Sourabh Singha — PhD (IIT Bombay)</h1>
-          <div class="subtitle">Research: Hydrogen storage • Pd–H systems • MD & ML for materials</div>
+          <h1>Sourabh Singha — PhD Student, IIT Bombay</h1>
+          <div class="subtitle">Hydrogen storage • Pd–H systems • MD & ML for materials</div>
         </div>
       </div>
 
       <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
+        <!-- links open the same single file but in new tab (target="_blank") preserving the fragment -->
+        <a href="#home" target="_blank">Home</a>
+        <a href="#publications" target="_blank">Publications</a>
+        <a href="#blogs" target="_blank">Blog</a>
+        <a href="#projects" target="_blank">Projects</a>
+        <a href="#contact" target="_blank">Contact</a>
       </nav>
     </header>
 
-    <div class="grid">
+    <div class="mobile-nav" style="margin-top:12px">
+      <a href="#home" onclick="navigate('#home')">Home</a>
+      <a href="#publications" onclick="navigate('#publications')">Publications</a>
+      <a href="#blogs" onclick="navigate('#blogs')">Blog</a>
+      <a href="#projects" onclick="navigate('#projects')">Projects</a>
+      <a href="#contact" onclick="navigate('#contact')">Contact</a>
+    </div>
+
+    <div class="grid" id="content-grid">
       <!-- LEFT COLUMN -->
       <aside>
-        <div class="card">
-          <div class="photo">Simulation / Group Photo (replace)</div>
+        <div class="card" id="left-overview">
+          <div class="photo">Group / Simulation Photo (replace)</div>
 
-          <div class="meta">
-            <b>Sourabh Singha</b>
-            <div>PhD Student — IIT Bombay</div>
-            <div style="margin-top:8px;color:var(--muted);font-size:14px">PhD guide: Prof. Abhijit Chatterjee<br>Co-guide: Mr. Anaanji Rajiv Kumar (HPCL)</div>
+          <div style="margin-top:12px">
+            <b style="font-size:16px">Sourabh Singha</b>
+            <div style="color:var(--muted);margin-top:6px">PhD Student — IIT Bombay<br>PhD guide: Prof. Abhijit Chatterjee<br>Co-guide: Mr. Anaanji Rajiv Kumar (HPCL)</div>
 
             <div style="margin-top:12px">
               <span class="pill">Molecular Dynamics</span>
@@ -97,105 +95,185 @@
             </div>
 
             <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
-            <div style="font-size:13px;color:var(--muted)">Contact</div>
-            <div style="margin-top:6px"><a class="btn" href="mailto:sourabh@example.com">Email</a></div>
+
+            <div style="font-size:13px;color:var(--muted)">Quick links</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn" href="mailto:sourabh@example.com">Email</a>
+              <a class="btn" href="#" onclick="downloadCV()">Download CV</a>
+              <a class="btn" href="https://github.com/sourabhsingha66" target="_blank">GitHub</a>
+            </div>
           </div>
         </div>
 
         <div class="card" style="margin-top:12px">
-          <h3 style="margin:0 0 10px 0">Collaborator</h3>
+          <h3 style="margin:0 0 10px 0">Collaborator (snapshot)</h3>
           <div style="display:flex;gap:10px;align-items:center">
             <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#7dd3fc,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04203a">JP</div>
             <div>
               <b>Jimut Bahan Pal</b>
-              <div style="color:var(--muted);font-size:13px">Research Fellow, C‑MInDS — IIT Bombay<br>Deep Learning • Medical Image Analysis</div>
+              <div style="color:var(--muted);font-size:13px">Research Fellow, C-MInDS — IIT Bombay<br>Deep Learning • Medical Image Analysis</div>
             </div>
           </div>
-          <p style="color:var(--muted);font-size:13px;margin-top:10px">See collaborator's projects: jimutmap, CAPTCHA DL, Wisp, and more.</p>
+          <p style="color:var(--muted);font-size:13px;margin-top:10px">See collaborator's projects: jimutmap, CAPTCHA DL, Wisp, and course notes.</p>
         </div>
 
       </aside>
 
-      <!-- RIGHT COLUMN -->
-      <main>
-        <section id="about" class="section card">
-          <h2>About</h2>
-          <p class="lead">I am a PhD student at IIT Bombay (Chemical Engineering / Materials Modeling) focused on atomistic simulations of hydrogen in metals. My research includes layer-by-layer hydride formation, strain-driven diffusion at α/β interfaces, and developing ML surrogates for diffusion barriers. This site combines my research profile with collaborator summaries and project links.</p>
+      <!-- RIGHT COLUMN (pages as sections inside single file) -->
+      <main style="min-width:0">
+
+        <!-- HOME -->
+        <section id="home" class="card section">
+          <h2 class="page-title">Home</h2>
+          <p class="lead">I am a PhD student at IIT Bombay (Chemical Engineering / Materials Modeling) focused on atomistic simulations of hydrogen in metals. My work includes layer-by-layer hydride formation, strain-driven diffusion at α/β interfaces, and building ML surrogates for diffusion barriers to accelerate KMC simulations.</p>
+
+          <div style="display:flex;gap:14px;margin-top:14px;flex-wrap:wrap">
+            <div style="flex:1;min-width:260px" class="card" aria-hidden>
+              <h3 style="margin:0 0 8px 0">News</h3>
+              <div style="color:var(--muted);line-height:1.6">
+                <div><strong>2025</strong> — Working on ML diffusion-barrier surrogate trained on ~1M barriers.</div>
+                <div style="margin-top:6px"><strong>2024</strong> — PCT diagram work & VDoS analysis completed (preprints / manuscripts in progress).</div>
+              </div>
+            </div>
+
+            <div style="flex:1;min-width:260px" class="card" aria-hidden>
+              <h3 style="margin:0 0 8px 0">Research Snapshot</h3>
+              <ul style="color:var(--muted);line-height:1.6;padding-left:18px">
+                <li>Hydrogen storage in metals (Pd–H, Ni–H)</li>
+                <li>Layer-by-layer hydride nucleation & growth</li>
+                <li>Strain-coupled diffusion at interfaces</li>
+                <li>MD (GROMACS / LAMMPS), NEB, KMC & ML</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
-        <section id="research" class="section card">
-          <h2>Research Interests</h2>
-          <ul style="color:var(--muted);line-height:1.7">
-            <li>Hydrogen storage in metals (Pd–H, Ni–H)</li>
-            <li>Layer-by-layer hydride formation and nucleation</li>
-            <li>Strain effects on diffusion and interface energetics</li>
-            <li>Molecular Dynamics (GROMACS / LAMMPS) & NEB calculations</li>
-            <li>Kinetic Monte Carlo models for macroscopic kinetics</li>
-            <li>Machine learning for predicting diffusion barriers</li>
+        <!-- PUBLICATIONS -->
+        <section id="publications" class="card section">
+          <h2 class="page-title">Publications</h2>
+
+          <p style="color:var(--muted)">This combined file includes a short curated list below. For complete lists, attach BibTeX or link to Google Scholar.</p>
+
+          <div class="pub-card">
+            <h3 style="margin:0 0 6px 0">Singha, S.; Chatterjee, A. — PCT diagram and VDoS (2024)</h3>
+            <div style="color:var(--muted);font-size:13px;margin-bottom:6px">Preprint / in-progress</div>
+            <p style="color:var(--muted);margin:0">Constructed P–C–T diagrams using EAM potentials; performed VDoS analysis from VACF and statistical post-processing.</p>
+          </div>
+
+          <div class="pub-card">
+            <h3 style="margin:0 0 6px 0">Reviving Poor Object Segmentations in OOD Medical Images using Variational-Deep-PCA Modeling</h3>
+            <div style="color:var(--muted);font-size:13px;margin-bottom:6px">J. B. Pal et al. — WACV / MICCAI related works (replicated sample)</div>
+            <p style="color:var(--muted);margin:0">Representative collaborator publication included to mirror collaborator's page.</p>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+          <details style="color:var(--muted)">
+            <summary style="cursor:pointer;padding:8px 0">Add BibTeX / Upload PDFs</summary>
+            <p style="margin-top:8px">You can paste BibTeX entries here or provide URLs to PDFs; this single-file site can be edited to include those links directly.</p>
+          </details>
+        </section>
+
+        <!-- BLOGS -->
+        <section id="blogs" class="card section">
+          <h2 class="page-title">Blog & Course Notes</h2>
+          <p class="lead">Course notes, teaching slides, and blog posts (placeholders). Replace the links below with your actual markdown or PDF resources.</p>
+
+          <ul style="color:var(--muted);line-height:1.6">
+            <li><a href="#" target="_blank">IITB: Selected course notes (example)</a></li>
+            <li><a href="#" target="_blank">CS411: Applications of Computer Vision & Deep Learning (RKMVERI)</a></li>
+            <li><a href="#" target="_blank">Teaching examples & code snippets</a></li>
           </ul>
         </section>
 
-        <section id="projects" class="section card">
-          <h2>Selected Projects</h2>
-          <div class="projects">
+        <!-- PROJECTS -->
+        <section id="projects" class="card section">
+          <h2 class="page-title">Selected Projects</h2>
+
+          <div class="projects" style="margin-top:10px">
             <div class="proj">
               <h3>PCT diagram generation (EAM)</h3>
-              <p>Constructed P–C–T diagrams using EAM potentials; performed VDoS analysis from VACF and statistical post-processing.</p>
+              <p>Constructed P–C–T diagrams using EAM potentials; VDoS from VACF with statistical postprocessing.</p>
             </div>
+
             <div class="proj">
               <h3>PdH layer-by-layer modelling</h3>
-              <p>Atomistic simulations investigating layer growth, composition evolution and strain coupling across (1-x)Pd + xPdH → PdH<sub>x</sub>.</p>
+              <p>Atomistic simulations of layer growth, composition evolution and strain coupling across (1-x)Pd + xPdH → PdH<sub>x</sub>.</p>
             </div>
+
             <div class="proj">
               <h3>Diffusion barrier ML model</h3>
               <p>Training surrogate models on a large dataset (~1M barriers) to accelerate barrier estimation for KMC inputs.</p>
             </div>
+
             <div class="proj">
-              <h3>GROMACS: solvated Li‑polysulfide</h3>
-              <p>MD simulations of solvated lithium polysulfides; force field setup and analysis scripts available on request.</p>
+              <h3>GROMACS: Solvated Li-polysulfide</h3>
+              <p>MD simulation workflows, force-field setup and analysis scripts for polysulfide solvation studies.</p>
             </div>
           </div>
         </section>
 
-        <section id="publications" class="section card">
-          <h2>Publications & Selected Outputs</h2>
-          <ul class="pubs" style="color:var(--muted)">
-            <li>Singha, S.; Chatterjee, A. — PCT diagram and VDoS (2024). (preprint / in‑progress)</li>
-            <li>Journal / conference manuscripts and other outputs — add full bibtex or links here.</li>
-          </ul>
-        </section>
-
-        <section id="teaching" class="section card">
-          <h2>Teaching & Mentoring</h2>
-          <p class="lead">Guest lectures and course assistance in computational materials, molecular dynamics, and data‑driven modelling. Available to supervise projects and collaborate on interdisciplinary topics (MD + ML).</p>
-        </section>
-
-        <section id="contact" class="section card">
-          <h2>Contact</h2>
-          <div class="contact">
+        <!-- CONTACT -->
+        <section id="contact" class="card section">
+          <h2 class="page-title">Contact</h2>
+          <p style="color:var(--muted)">Office: SIC-401, 4th Floor, Kanwal Rekhi (KReSIT) Building, IIT Bombay</p>
+          <p style="color:var(--muted)">Email: <a href="mailto:sourabh@example.com">sourabh@example.com</a></p>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
             <a class="btn" href="mailto:sourabh@example.com">Email Sourabh</a>
             <a class="btn" href="#" onclick="downloadCV()">Download CV</a>
             <a class="btn" href="https://github.com/sourabhsingha66" target="_blank">GitHub</a>
           </div>
-          <p style="color:var(--muted);margin-top:10px">Replace contact/email links with real addresses. To add publications, paste BibTeX entries inside the Publications section.</p>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+          <h3 style="margin:8px 0 6px 0">Replica: Jimut Bahan Pal (short)</h3>
+          <p style="color:var(--muted);margin:0">Jimut Bahan Pal — Research Fellow, C-MInDS, IIT Bombay. Deep Learning, Computer Vision & Medical Image Analysis. See collaborator snapshot on the left.</p>
         </section>
 
       </main>
     </div>
 
     <footer>
-      Built with ♥ • Edit this file to add images, publications, and links. Suggested filename: <code>index.html</code>
+      Built with ♥ • Single-file site. Links in header open this same HTML in a new tab with the selected section fragment (e.g. <code>#publications</code>). Replace placeholder emails, photos, and PDF links with your real assets.
     </footer>
   </div>
 
   <script>
+    // Allow fragment-based navigation from same-file new-tab links to scroll into view
+    (function(){
+      function scrollToFragment() {
+        const frag = location.hash;
+        if (!frag) return;
+        // give the page a tick to ensure layout complete
+        setTimeout(() => {
+          const el = document.querySelector(frag);
+          if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }, 80);
+      }
+      // run once on load
+      scrollToFragment();
+      // also run on hashchange
+      window.addEventListener('hashchange', scrollToFragment, false);
+    })();
+
     function downloadCV(){
-      // Example: create a dummy text file and download; replace with real PDF path when available
-      const data = `Sourabh Singha\nPhD Student, IIT Bombay\nResearch: Hydrogen storage in metals`;
+      // Replace with actual PDF path when available; downloads simple text as placeholder
+      const data = `Sourabh Singha\nPhD Student, IIT Bombay\nResearch: Hydrogen storage in metals\nEmail: sourabh@example.com`;
       const blob = new Blob([data], {type: 'text/plain'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = 'Sourabh_Singha_CV.txt'; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
     }
+
+    // Mobile nav helper (single-file navigation)
+    function navigate(fragment){
+      history.replaceState(null, '', fragment);
+      const el = document.querySelector(fragment);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // If the user opened the file via fragment in a new tab (target="_blank"), some browsers may not auto-scroll.
+    // This ensures we scroll to visible fragment on load (already called above).
   </script>
 </body>
 </html>
